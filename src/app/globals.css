@@ -1,2 +1,39 @@
+
 @import "tailwindcss";
-@import "@heroui/styles"; 
+@import "@heroui/styles";
+
+:root {
+  /* Brand */
+  --brand: #B6FB44;
+
+  /* Backgrounds */
+  --background: #041117;
+  --surface: #0A1B22;
+  --surface-hover: #10262E;
+
+  /* Text */
+  --foreground: #FFFFFF;
+  --secondary: #939393;
+
+  /* Borders */
+  --border: rgb(255 255 255 / 10%);
+}
+
+@theme inline {
+  --color-brand: var(--brand);
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-foreground: var(--foreground);
+  --color-secondary: var(--secondary);
+  --color-border: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
