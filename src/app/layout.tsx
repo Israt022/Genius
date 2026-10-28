@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Urbanist } from "next/font/google";
 import "./globals.css";
 import { ToastContainer } from "react-toastify";
 import Navbar from "@/components/shared/Navbar";
+import Footer from "@/components/shared/Footer";
 
 const urbanist = Urbanist({
   variable: "--font-urbanist",
@@ -36,6 +37,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <main>
           {children}
         </main>
+        <Footer />
         <ToastContainer />
       </body>
     </html>
