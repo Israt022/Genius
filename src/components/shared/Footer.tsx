@@ -37,12 +37,13 @@ export default function Footer() {
                 {/* Main Footer */}
                 <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-[50px]">
                     {/* Brand - Left Side */}
-                    <div className="flex flex-col gap-3 lg:w-[545px] lg:shrink-0">
+                    <div className="flex flex-col lg:w-[545px] lg:shrink-0">
                         <FooterLogo />
 
-                        <p className="w-full text-base font-normal leading-[50px] tracking-normal text-foreground/70 lg:text-[22px]">
-                            Sed ut perspiciatis unde omnis iste natus error sit
-                            voluptatem accusantium doloremque laudantium totam.
+                        <p className="w-full text-[16px] font-normal leading-[50px] tracking-normal text-foreground/70 lg:h-[100px] lg:text-[22px]">
+                            Sed ut perspiciatis undmnis iste natus error sit
+                            <br />
+                            voluptatem accu santium dolore laudantium totam.
                         </p>
                     </div>
 
