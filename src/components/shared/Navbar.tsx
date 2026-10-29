@@ -55,7 +55,7 @@ export default function Navbar() {
                 {/* Right Actions */}
                 <div className="flex shrink-0 items-center gap-3">
                     <Button
-                        className="hidden bg-brand font-semibold text-background transition-opacity hover:opacity-85 lg:inline-flex"
+                        className="hidden  rounded-md bg-brand font-semibold text-background transition-opacity hover:opacity-85 lg:inline-flex"
                         onPress={() => {
                             window.location.href = cta.href;
                         }}
@@ -112,7 +112,7 @@ export default function Navbar() {
                                             href={item.href}
                                             aria-current={active ? "page" : undefined}
                                             onClick={() => setIsMenuOpen(false)}
-                                            className={`block rounded-lg px-3 py-3 text-sm font-medium transition-colors duration-200 hover:bg-surface-hover hover:text-brand ${active
+                                            className={`block rounded-md px-3 py-3 text-sm font-medium transition-colors duration-200 hover:bg-surface-hover hover:text-brand ${active
                                                 ? "text-brand"
                                                 : "text-foreground"
                                                 }`}
@@ -126,7 +126,7 @@ export default function Navbar() {
 
                         <div className="mt-3 border-t border-border pt-4">
                             <Button
-                                className="w-full bg-brand font-semibold text-background transition-opacity hover:opacity-85"
+                                className="w-full rounded-md bg-brand font-semibold text-background transition-opacity hover:opacity-85"
                                 onPress={() => {
                                     setIsMenuOpen(false);
                                     window.location.href = cta.href;
