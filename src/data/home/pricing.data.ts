@@ -1,0 +1,46 @@
+export const plans = [
+    {
+        name: "Personal",
+        description: "For small projects",
+        monthly: 9,
+        yearly: 7,
+        features: [
+            "Up to 5 users",
+            "10GB Storage",
+            "Admin Website",
+            "Email Automation",
+        ],
+        button: "Get Started Now",
+        featured: false,
+    },
+    {
+        name: "Professional",
+        description: "For larger projects",
+        monthly: 20,
+        yearly: 23,
+        features: [
+            "Up to 20 users",
+            "100GB Storage",
+            "Admin Website",
+            "Email Automation",
+            "Custom Analytics",
+            "Full Integrations",
+        ],
+        button: "Get Started Now",
+        featured: true,
+    },
+    {
+        name: "Enterprise",
+        description: "Advanced tools for bigger goals.",
+        monthly: 50,
+        yearly: 47,
+        features: [
+            "Up to 5 users",
+            "10GB Storage",
+            "Admin Website",
+            "Email Automation",
+        ],
+        button: "Get Started Now",
+        featured: false,
+    },
+];
