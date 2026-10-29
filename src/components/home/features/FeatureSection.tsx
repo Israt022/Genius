@@ -20,7 +20,7 @@ export default function FeatureSection({
             className="w-full bg-background"
         >
             <div
-                className={`section-container mx-auto flex min-w-0 flex-col items-center gap-8 px-[26px] py-10 min-[744px]:px-[42px] min-[1200px]:flex-row min-[1200px]:gap-6 min-[1200px]:px-[clamp(60px,calc(75vw-810px),150px)] min-[1200px]:py-[80px] ${imageOnLeft ? "min-[1200px]:flex-row-reverse" : ""
+                className={`section-container mx-auto flex min-w-0 flex-col items-center gap-8 px-[26px] py-10 min-[744px]:px-[42px] min-[1200px]:flex-row min-[1200px]:items-center min-[1200px]:gap-6 min-[1200px]:px-[clamp(60px,calc(75vw-810px),150px)] min-[1200px]:py-[80px] ${imageOnLeft ? "min-[1200px]:flex-row-reverse" : ""
                     }`}
             >
                 {/* Text content */}
@@ -64,16 +64,16 @@ export default function FeatureSection({
                 <Reveal
                     direction={imageOnLeft ? "right" : "left"}
                     delay={0.12}
-                    className="w-full min-w-0 min-[1000px]:w-0 min-[1000px]:flex-1"
+                    className="w-full min-w-0 min-[1200px]:w-0 min-[1200px]:flex-1"
                 >
-                    <div className="relative mx-auto h-[620px] w-full max-w-[555px] overflow-hidden rounded-[20px] bg-surface">
+                    <div className="relative mx-auto h-[620px] w-full min-w-0 max-w-none overflow-hidden rounded-[20px] bg-surface min-[1200px]:max-w-[555px]">
                         <Image
                             src={feature.image.src}
                             alt={feature.image.alt}
                             width={335}
                             height={335}
-                            sizes="335px"
-                            className="absolute left-1/2 bottom-[-96.53px] h-auto w-[335.19px] max-w-none -translate-x-1/2 object-contain"
+                            sizes="(min-width: 1200px) 555px, 100vw"
+                            className="absolute bottom-[-96.53px] left-1/2 h-auto w-[335.19px] max-w-none -translate-x-1/2 object-contain"
                             style={{
                                 objectPosition: feature.image.position ?? "center",
                             }}
