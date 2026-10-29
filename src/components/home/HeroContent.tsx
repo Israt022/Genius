@@ -6,7 +6,7 @@ export default function HeroContent() {
     return (
         <div className="flex w-full min-w-0 flex-col items-start min-[1440px]:w-0 min-[1440px]:flex-1">
             <Reveal className="w-full min-w-0">
-                <h1 className="font-sans text-4xl font-medium leading-[1.1] text-foreground sm:text-5xl md:text-6xl lg:text-[72px] lg:leading-[1]">
+                <h1 className="font-sans text-3xl md:text-5xl lg:text-7xl font-medium leading-[1.1] text-foreground sm:text-5xl md:text-6xl lg:text-[72px] lg:leading-[1]">
                     {heroData.heading}
                 </h1>
             </Reveal>

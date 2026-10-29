@@ -4,7 +4,7 @@ import HeroImage from "./HeroImage";
 export default function Hero() {
     return (
         <section className="w-full bg-background">
-            <div className="section-container flex min-w-0 flex-col gap-[10px] pt-10 pb-[120px] min-[1440px]:flex-row min-[1440px]:items-center min-[1440px]:gap-[10px]">
+            <div className="section-container flex min-w-0 flex-col gap-[10px] px-[26px] pt-10 pb-[120px] min-[744px]:px-[42px] min-[1200px]:flex-row min-[1200px]:items-center min-[1200px]:gap-[10px] min-[1200px]:px-[150px]">
                 <HeroContent />
                 <HeroImage />
             </div>
