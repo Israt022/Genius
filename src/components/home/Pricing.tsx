@@ -10,8 +10,8 @@ export default function Pricing() {
     const [billing, setBilling] = useState<"monthly" | "yearly">("monthly");
 
     return (
-        <section className="w-full bg-background px-[26px] min-[744px]:px-[42px] min-[1080px]:px-[150px] py-25">
-            <div className="mx-auto pt-[60px] mb-30 w-full max-w-[1140px]">
+        <section className="w-full bg-background px-[26px] min-[744px]:px-[42px] min-[1080px]:px-[150px] pt-25 pb-25">
+            <div className="mx-auto pt-[60px] w-full max-w-[1140px]">
                 {/* Heading */}
                 <div className="mx-auto  text-center">
                     <Reveal className="mx-auto text-center">
