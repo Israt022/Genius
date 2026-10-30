@@ -45,7 +45,7 @@ const ContactPage = () => {
     };
 
     return (
-        <section className="w-full bg-background px-[26px] min-[744px]:px-[42px] min-[1080px]:px-[150px] pt-[60px] pb-25">
+        <section className="w-full bg-background px-[16px] min-[744px]:px-[22px] min-[1080px]:px-[150px] pt-[60px] pb-25">
             <div className="mx-auto w-full max-w-[1140px]">
                 {/* Heading */}
                 <div className="mx-auto  text-center">
