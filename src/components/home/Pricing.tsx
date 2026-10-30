@@ -25,8 +25,8 @@ export default function Pricing({ showBreadcrumb = false }: PricingProps) {
                             Best pricing for growth
                         </h2>
 
-                        <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-secondary sm:text-lg md:text-xl lg:text-[26px]">
-                            Simple plans designed to grow with you. Choose yours and get started!
+                        <p className="mx-auto mt-4 max-w-[941px] text-base leading-7 text-secondary sm:text-lg md:text-xl lg:text-[26px]">
+                            Whether you're an individual, a small team, or a growing enterprise, we have a plan that aligns perfectly with your goals
                         </p>
                         {showBreadcrumb && (
                             <Reveal delay={0.12} className="mt-[30px]">
