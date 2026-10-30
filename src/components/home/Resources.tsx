@@ -40,7 +40,7 @@ const data = [
 
 const Resources = () => {
     return (
-        <section className="w-full bg-background px-[26px] min-[744px]:px-[42px] min-[1080px]:px-[150px]">
+        <section className="w-full bg-background px-[16px] min-[744px]:px-[22px] min-[1080px]:px-[150px]">
             {/* Heading */}
             <div className="mx-auto w-full max-w-[1140px] pt-[60px]">
                 <Reveal className="mx-auto text-left">

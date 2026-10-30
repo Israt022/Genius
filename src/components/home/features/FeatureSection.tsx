@@ -20,7 +20,7 @@ export default function FeatureSection({
             className="w-full bg-background"
         >
             <div
-                className={`section-container mx-auto flex min-w-0 flex-col items-center gap-8 px-[26px] py-10 min-[744px]:px-[42px] min-[1200px]:flex-row min-[1200px]:items-center min-[1200px]:gap-6 min-[1200px]:px-[clamp(60px,calc(75vw-810px),150px)] min-[1200px]:py-[80px] ${imageOnLeft ? "min-[1200px]:flex-row-reverse" : ""
+                className={`section-container mx-auto flex min-w-0 flex-col items-center gap-8 px-[16px] py-10 min-[744px]:px-[20px] min-[1200px]:flex-row min-[1200px]:items-center min-[1200px]:gap-6 min-[1200px]:px-[clamp(60px,calc(75vw-810px),150px)] min-[1200px]:py-[80px] ${imageOnLeft ? "min-[1200px]:flex-row-reverse" : ""
                     }`}
             >
                 {/* Text content */}
