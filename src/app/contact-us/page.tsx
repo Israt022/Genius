@@ -3,8 +3,47 @@
 import Reveal from "@/components/animations/Reveal";
 import Breadcrumb from "@/components/shared/Breadcrumb";
 import Image from "next/image";
+import emailjs from "@emailjs/browser";
+import { useState } from "react";
+import { toast } from "react-toastify";
 
 const ContactPage = () => {
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+        const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+        const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+        if (!serviceId || !templateId || !publicKey) {
+            toast.error("Contact service is currently unavailable. Please try again later.");
+            return;
+        }
+
+        if (isSubmitting) return;
+
+        setIsSubmitting(true);
+
+        const form = event.currentTarget;
+
+        try {
+            await emailjs.sendForm(
+                serviceId,
+                templateId,
+                form,
+                { publicKey }
+            );
+
+            toast.success("Your message has been sent successfully!");
+            form.reset();
+        } catch (error) {
+            toast.error("Failed to send message. Please try again.");
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
     return (
         <section className="w-full bg-background px-[26px] min-[744px]:px-[42px] min-[1080px]:px-[150px] pt-[60px] pb-25">
             <div className="mx-auto w-full max-w-[1140px]">
@@ -45,50 +84,54 @@ const ContactPage = () => {
                                 our team will get back to you as soon as possible.
                             </p>
 
-                            <form className="mt-8 flex w-full flex-col gap-5">
 
+                            <form
+                                onSubmit={handleSubmit}
+                                className="mt-8 flex w-full flex-col gap-5"
+                            >
                                 {/* Name */}
-                                <div className="flex flex-col gap-2">
-                                    <input
-                                        id="name"
-                                        name="name"
-                                        type="text"
-                                        placeholder="Name"
-                                        className="h-[56px] w-full rounded-xl border border-[#272626] bg-surface px-5 text-base text-foreground outline-none transition-colors placeholder:text-secondary focus:border-brand"
-                                    />
-                                </div>
+                                <input
+                                    id="name"
+                                    name="name"
+                                    type="text"
+                                    placeholder="Name"
+                                    required
+                                    maxLength={100}
+                                    className="h-[56px] w-full rounded-xl border border-[#272626] bg-surface px-5 text-base text-foreground outline-none transition-colors placeholder:text-secondary focus:border-brand"
+                                />
 
                                 {/* Email */}
-                                <div className="flex flex-col gap-2">
-                                    <input
-                                        id="email"
-                                        name="email"
-                                        type="email"
-                                        placeholder="Email Address"
-                                        className="h-[56px] w-full rounded-xl border border-[#272626] bg-surface px-5 text-base text-foreground outline-none transition-colors placeholder:text-secondary focus:border-brand"
-                                    />
-                                </div>
+                                <input
+                                    id="email"
+                                    name="email"
+                                    type="email"
+                                    placeholder="Email Address"
+                                    required
+                                    maxLength={254}
+                                    className="h-[56px] w-full rounded-xl border border-[#272626] bg-surface px-5 text-base text-foreground outline-none transition-colors placeholder:text-secondary focus:border-brand"
+                                />
 
                                 {/* Message */}
-                                <div className="flex flex-col gap-2">
-                                    <textarea
-                                        id="message"
-                                        name="message"
-                                        rows={5}
-                                        placeholder="Message"
-                                        className="w-full resize-none rounded-xl border border-[#272626] bg-surface px-5 py-4 text-base text-foreground outline-none transition-colors placeholder:text-secondary focus:border-brand"
-                                    />
-                                </div>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    rows={5}
+                                    placeholder="Message"
+                                    required
+                                    maxLength={5000}
+                                    className="w-full resize-none rounded-xl border border-[#272626] bg-surface px-5 py-4 text-base text-foreground outline-none transition-colors placeholder:text-secondary focus:border-brand"
+                                />
 
                                 {/* Submit */}
                                 <button
                                     type="submit"
-                                    className="mt-2 w-full rounded-xl bg-brand px-6 py-4 text-base font-semibold text-background transition-opacity hover:opacity-85"
+                                    disabled={isSubmitting}
+                                    className="mt-2 w-full rounded-xl bg-brand px-6 py-4 text-base font-semibold text-background transition-opacity hover:opacity-85 disabled:cursor-not-allowed disabled:opacity-60"
                                 >
-                                    Submit
+                                    {isSubmitting ? "Sending..." : "Submit"}
                                 </button>
-
                             </form>
+
                         </div>
                     </Reveal>
 
