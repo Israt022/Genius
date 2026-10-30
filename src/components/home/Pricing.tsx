@@ -15,8 +15,8 @@ export default function Pricing({ showBreadcrumb = false }: PricingProps) {
     const [billing, setBilling] = useState<"monthly" | "yearly">("monthly");
 
     return (
-        <section className="w-full bg-background px-[26px] min-[744px]:px-[42px] min-[1080px]:px-[150px] pt-25 pb-25">
-            <div className="mx-auto pt-[60px] w-full max-w-[1140px]">
+        <section className="w-full bg-background px-[26px] min-[744px]:px-[42px] min-[1080px]:px-[150px] pt-[60px] pb-25">
+            <div className="mx-auto w-full max-w-[1140px]">
                 {/* Heading */}
                 <div className="mx-auto  text-center">
                     <Reveal className="mx-auto text-center">
@@ -29,7 +29,7 @@ export default function Pricing({ showBreadcrumb = false }: PricingProps) {
                             Simple plans designed to grow with you. Choose yours and get started!
                         </p>
                         {showBreadcrumb && (
-                            <Reveal delay={0.12} className="mt-3">
+                            <Reveal delay={0.12} className="mt-[30px]">
                                 <Breadcrumb
                                     items={[
                                         { label: "Home", href: "/" },
