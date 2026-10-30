@@ -40,7 +40,7 @@ const data = [
 
 const Resources = () => {
     return (
-        <section className="w-full bg-background px-[26px] min-[744px]:px-[42px] mb-25 min-[1080px]:px-[150px]">
+        <section className="w-full bg-background px-[26px] min-[744px]:px-[42px] min-[1080px]:px-[150px]">
             {/* Heading */}
             <div className="mx-auto w-full max-w-[1140px] pt-[60px]">
                 <Reveal className="mx-auto text-left">
@@ -51,7 +51,7 @@ const Resources = () => {
             </div>
 
             {/* Resource Cards */}
-            <div className="mx-auto mt-10 grid w-full max-w-[1140px] grid-cols-1 gap-[30px] pb-[120px] min-[1200px]:grid-cols-3">
+            <div className="mx-auto mt-10 grid mb-[100px] w-full max-w-[1140px] grid-cols-1 gap-[30px] min-[1200px]:grid-cols-3">
                 {data.map((item, index) => (
                     <Reveal
                         key={item.id}
