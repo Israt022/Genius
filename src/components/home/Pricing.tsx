@@ -4,9 +4,14 @@
 import { useState } from "react";
 import { CheckCircle } from "@phosphor-icons/react";
 import { plans } from "@/data/home/pricing.data";
-import Reveal from "@/components/animations/Reveal";;
+import Reveal from "@/components/animations/Reveal";import Breadcrumb from "../shared/Breadcrumb";
+;
 
-export default function Pricing() {
+type PricingProps = {
+    showBreadcrumb?: boolean;
+};
+
+export default function Pricing({ showBreadcrumb = false }: PricingProps) {
     const [billing, setBilling] = useState<"monthly" | "yearly">("monthly");
 
     return (
@@ -23,33 +28,43 @@ export default function Pricing() {
                         <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-secondary sm:text-lg md:text-xl lg:text-[26px]">
                             Simple plans designed to grow with you. Choose yours and get started!
                         </p>
+                        {showBreadcrumb && (
+                            <Reveal delay={0.12} className="mt-3">
+                                <Breadcrumb
+                                    items={[
+                                        { label: "Home", href: "/" },
+                                        { label: "Pricing", href: "/pricing" },
+                                    ]}
+                                />
+                            </Reveal>
+                        )}
                     </Reveal>
                     <Reveal delay={0.12} className="mt-[30px] lg:mb-[20px] inline-flex items-center gap-1 rounded-xl border border-[#5F5F5F] bg-surface p-1.5">
 
                         {/* Monthly / Yearly Toggle */}
-                            <button
-                                type="button"
-                                onClick={() => setBilling("monthly")}
-                                aria-pressed={billing === "monthly"}
-                                className={`rounded-xl px-5 py-2.5 text-sm font-medium transition-colors ${billing === "monthly"
-                                    ? "bg-brand text-background"
-                                    : "text-foreground hover:bg-white/5"
-                                    }`}
-                            >
-                                Monthly
-                            </button>
+                        <button
+                            type="button"
+                            onClick={() => setBilling("monthly")}
+                            aria-pressed={billing === "monthly"}
+                            className={`rounded-xl px-5 py-2.5 text-sm font-medium transition-colors ${billing === "monthly"
+                                ? "bg-brand text-background"
+                                : "text-foreground hover:bg-white/5"
+                                }`}
+                        >
+                            Monthly
+                        </button>
 
-                            <button
-                                type="button"
-                                onClick={() => setBilling("yearly")}
-                                aria-pressed={billing === "yearly"}
-                                className={`flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium transition-colors ${billing === "yearly"
-                                    ? "bg-brand text-background"
-                                    : "text-foreground hover:bg-white/5"
-                                    }`}
-                            >
-                                Yearly
-                            </button>
+                        <button
+                            type="button"
+                            onClick={() => setBilling("yearly")}
+                            aria-pressed={billing === "yearly"}
+                            className={`flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium transition-colors ${billing === "yearly"
+                                ? "bg-brand text-background"
+                                : "text-foreground hover:bg-white/5"
+                                }`}
+                        >
+                            Yearly
+                        </button>
                     </Reveal>
                 </div>
 
