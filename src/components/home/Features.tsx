@@ -6,7 +6,7 @@ import {
     ChartLineUp,
     Wallet,
 } from "@phosphor-icons/react";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const data = [
     {
@@ -37,32 +37,37 @@ const Features = () => {
     const [activeCard, setActiveCard] = useState<number | null>(null);
 
     useEffect(() => {
-        if (window.innerWidth >= 1024) return;
+        if (window.innerWidth >= 768) return;
 
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    const index = Number(entry.target.getAttribute("data-index"));
+        const updateActiveCard = () => {
+            const viewportCenter = window.innerHeight / 2;
 
-                    if (entry.isIntersecting) {
-                        setActiveCard(index);
-                    } else {
-                        setActiveCard((current) =>
-                            current === index ? null : current
-                        );
-                    }
-                });
-            },
-            {
-                threshold: 0.65,
-            }
-        );
+            let closestIndex: number | null = null;
+            let closestDistance = Infinity;
 
-        cardRefs.current.forEach((card) => {
-            if (card) observer.observe(card);
-        });
+            cardRefs.current.forEach((card, index) => {
+                if (!card) return;
+                const rect = card.getBoundingClientRect();
+                if (rect.bottom <= 0 || rect.top >= window.innerHeight) return;
+                const cardCenter = rect.top + rect.height / 2;
+                const distance = Math.abs(viewportCenter - cardCenter);
 
-        return () => observer.disconnect();
+                if (distance < closestDistance) {
+                    closestDistance = distance;
+                    closestIndex = index;
+                }
+            });
+            setActiveCard(closestIndex);
+        };
+        updateActiveCard();
+
+        window.addEventListener("scroll", updateActiveCard, { passive: true });
+        window.addEventListener("resize", updateActiveCard);
+
+        return () => {
+            window.removeEventListener("scroll", updateActiveCard);
+            window.removeEventListener("resize", updateActiveCard);
+        };
     }, []);
 
     // console.log(window.innerWidth, window.innerHeight);
