@@ -28,20 +28,20 @@ export default function FeatureSection({
                     direction={imageOnLeft ? "left" : "right"}
                     className="w-full min-w-0 min-[1200px]:w-0 min-[1200px]:flex-1"
                 >
-                    <div className="flex min-w-0 flex-col items-start">
+                    <div className="flex min-w-0 flex-col items-start space-y-[30px]">
                         <span className="inline-flex max-w-full items-center rounded-full border border-brand px-5 py-[15px] text-[20px] font-medium text-brand sm:text-[26px]">
                             {feature.badge}
                         </span>
 
-                        <h2 className="mt-5 text-3xl md:text-5xl lg:text-7xl font-medium leading-[1.1] text-foreground sm:text-4xl min-[1000px]:text-5xl min-[1200px]:text-6xl">
+                        <h2 className="text-3xl md:text-5xl lg:text-7xl font-medium leading-[1.15] text-foreground sm:text-4xl min-[1000px]:text-5xl min-[1200px]:text-6xl">
                             {feature.heading}
                         </h2>
 
-                        <p className="mt-5 max-w-xl text-base font-light leading-7 text-secondary sm:text-[22px]">
+                        <p className=" max-w-xl text-base font-light leading-10 text-secondary sm:text-[22px]">
                             {feature.description}
                         </p>
 
-                        <ul className="mt-6 flex flex-col gap-3">
+                        <ul className="flex flex-col gap-3 space-y-[15px]">
                             {feature.benefits.map((benefit) => (
                                 <li
                                     key={benefit}
@@ -73,7 +73,8 @@ export default function FeatureSection({
                             width={335}
                             height={335}
                             sizes="(min-width: 1200px) 555px, 100vw"
-                            className="absolute bottom-[-96.53px] left-1/2 h-auto w-[335.19px] max-w-none -translate-x-1/2 object-contain"
+                            // className="absolute top-[96.53px] left-1/2 h-auto w-[335.19px] max-w-none -translate-x-1/2 object-contain"
+                            className="absolute top-[96.53px] left-1/2 h-auto w-[calc(100%-218.82px)] max-w-none -translate-x-1/2 object-contain"
                             style={{
                                 objectPosition: feature.image.position ?? "center",
                             }}

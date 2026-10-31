@@ -46,29 +46,32 @@ const Features = () => {
             <div className="section-container grid min-w-0 grid-cols-1 gap-[30px] px-[16px] pb-[120px] min-[744px]:px-[20px] min-[1024px]:grid-cols-3 min-[1024px]:px-[150px] min-[1440px]:px-[150px]">
                 {data.map((item) => {
                     const Icon = item.icon;
-                    const isFeatured = item.id === 1;
+                    // const isFeatured = item.id === 1;
                     return (
                         <Reveal key={item.id} className="h-full min-w-0">
                             <article
-                                className={`flex h-full min-h-[260px] flex-col items-start gap-5 rounded-[20px] border border-[#5F5F5F] p-[30px] text-left ${isFeatured
-                                    ? "bg-brand/10 text-brand"
-                                    : "bg-background text-foreground"
-                                    }`}
+                                // className={`flex h-full min-h-[260px] flex-col items-start gap-5 rounded-[20px] border border-[#5F5F5F] p-[30px] text-left ${isFeatured
+                                //     ? "bg-brand/10 text-brand"
+                                //     : "bg-background text-foreground"
+                                //     }`}
+                                className="group flex h-full min-h-[260px] flex-col items-start gap-5 rounded-[20px] border border-[#5F5F5F] bg-background p-[30px] text-left transition-colors duration-300 hover:border-brand hover:bg-brand/10 hover:text-brand"
                             >
                                 <Icon
                                     size={32}
                                     weight="fill"
-                                    className={isFeatured ? "text-brand" : "text-foreground"}
+                                    // className={isFeatured ? "text-brand" : "text-foreground"}
+                                    className="text-foreground transition-colors duration-300 group-hover:text-brand"
                                 />
                                 <div className="flex flex-col gap-5">
                                     <h3 className="text-2xl font-semibold leading-tight">
                                         {item.heading}
                                     </h3>
                                     <p
-                                        className={`text-base leading-7 ${isFeatured
-                                            ? "text-brand/80"
-                                            : "text-secondary"
-                                            }`}
+                                        // className={`text-base leading-7 ${isFeatured
+                                        //     ? "text-brand/80"
+                                        //     : "text-secondary"
+                                        //     }`}
+                                        className="text-base leading-7 text-secondary transition-colors duration-300 group-hover:text-brand/80"
                                     >
                                         {item.description}
                                     </p>
