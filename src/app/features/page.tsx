@@ -83,20 +83,19 @@ const Features = () => {
                     return (
                         <Reveal key={item.id} className="h-full min-w-0">
                             <article
-                                className={`flex h-full min-h-[260px] flex-col items-start gap-5 rounded-[20px] border border-[#5F5F5F] p-[30px] text-left bg-background text-foreground
-                                    `}
+                                className="group flex h-full min-h-[260px] flex-col items-start gap-5 rounded-[20px] border border-[#5F5F5F] bg-background p-[30px] text-left text-foreground transition-all duration-300 hover:scale-[1.01] hover:border-brand hover:bg-brand/5 min-[744px]:hover:scale-[1.02]"
                             >
                                 <Icon
                                     size={32}
                                     weight="fill"
-                                    className="text-foreground"
+                                    className="text-foreground transition-colors duration-300 group-hover:text-brand"
                                 />
                                 <div className="flex flex-col gap-5">
-                                    <h3 className="text-2xl font-semibold leading-tight">
+                                    <h3 className="text-2xl font-semibold leading-tight transition-colors duration-300 group-hover:text-brand">
                                         {item.heading}
                                     </h3>
                                     <p
-                                        className={`text-base leading-7 text-secondary`}
+                                        className="text-base leading-7 text-secondary transition-colors duration-300 group-hover:text-brand"
                                     >
                                         {item.description}
                                     </p>
