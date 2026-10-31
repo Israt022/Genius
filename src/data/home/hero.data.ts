@@ -1,6 +1,9 @@
 
 export const heroData = {
-    heading: "Best Apps Human Resource by Genius",
+    heading: {
+        first: "Best Apps",
+        second: "Human Resource by Genius",
+    },
     description:
         "Smart solution to manage attendance, payroll, reimbursement, and automated HR administration with cloud-based applications.",
     image: {
