@@ -58,7 +58,10 @@ const Resources = () => {
                         delay={index * 0.12}
                         className="h-full min-w-0"
                     >
-                        <article className="flex h-full min-w-0 flex-col gap-[20px] overflow-hidden rounded-[20px] border border-[#5F5F5F] p-[18px] sm:p-[22px]">
+                        <article
+                            // className="flex h-full min-w-0 flex-col gap-[20px] overflow-hidden rounded-[20px] border border-[#5F5F5F] p-[18px] sm:p-[22px]"
+                            className="group flex h-full min-w-0 flex-col gap-[20px] overflow-hidden rounded-[20px] border border-[#5F5F5F] p-[18px] transition-all duration-300 hover:scale-[1.01] hover:border-brand hover:bg-brand/5 min-[744px]:hover:scale-[1.02] sm:p-[22px]"
+                        >
                             {/* Image */}
                             <Link
                                 href={item.href}
@@ -79,25 +82,26 @@ const Resources = () => {
                                 <h3 className="text-[22px] font-semibold leading-tight text-foreground md:text-[26px] lg:text-[26px]">
                                     <Link
                                         href={item.href}
-                                        className="transition-colors hover:text-brand"
+                                        className="transition-colors duration-300 group-hover:text-brand"
                                     >
                                         {item.heading}
                                     </Link>
                                 </h3>
 
-                                <p className="text-[18px] md:text-[22px]  leading-6 text-[#FFFFFF]">
+                                <p className="text-[18px] md:text-[22px]  transition-colors duration-300 group-hover:text-brand leading-10 text-[#FFFFFF]">
                                     {item.description}
                                 </p>
 
                                 {/* Date */}
                                 <Link
                                     href={item.href}
-                                    className="mt-auto inline-flex items-center gap-2 text-[18px] md:text-[22px]  text-[#FFFFFF] transition-colors hover:text-brand"
+                                    // className="mt-auto inline-flex items-center gap-2 text-[18px] md:text-[22px]  text-[#FFFFFF] transition-colors hover:text-brand"
+                                    className="mt-auto inline-flex items-center gap-2 text-[18px] text-[#FFFFFF] transition-colors duration-300 group-hover:text-brand md:text-[22px]"
                                 >
                                     <Clock
                                         size={22}
                                         weight="regular"
-                                        className="shrink-0 text-[#5F5F5F]"
+                                        className="shrink-0 text-[#5F5F5F] duration-300 group-hover:text-brand"
                                     />
                                     <span>{item.date}</span>
                                 </Link>
