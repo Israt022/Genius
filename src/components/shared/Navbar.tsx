@@ -13,7 +13,7 @@ const navItems = [
 
 const cta = {
     label: "Start Free Trial",
-    href: "/login",
+    href: "/",
 };
 
 export default function Navbar() {

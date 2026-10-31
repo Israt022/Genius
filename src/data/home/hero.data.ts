@@ -12,12 +12,12 @@ export const heroData = {
     buttons: [
         {
             label: "Start Free Trial",
-            href: "/login",
+            href: "/",
             variant: "primary",
         },
         {
             label: "See price",
-            href: "/price",
+            href: "/pricing",
             variant: "secondary",
         },
     ],

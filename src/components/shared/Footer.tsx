@@ -14,9 +14,9 @@ const footerGroups = [
     {
         title: "Resource",
         links: [
-            { label: "Help Center", href: "/help-center" },
-            { label: "Partner Program", href: "/partners" },
-            { label: "SaaS Software", href: "/saas-software" },
+            { label: "Help Center", href: "/" },
+            { label: "Partner Program", href: "/" },
+            { label: "SaaS Software", href: "/" },
         ],
     },
     {
