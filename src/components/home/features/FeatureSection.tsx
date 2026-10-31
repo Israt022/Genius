@@ -74,7 +74,7 @@ export default function FeatureSection({
                             height={335}
                             sizes="(min-width: 1200px) 555px, 100vw"
                             // className="absolute top-[96.53px] left-1/2 h-auto w-[335.19px] max-w-none -translate-x-1/2 object-contain"
-                            className="absolute top-[96.53px] left-1/2 h-auto w-[calc(100%-218.82px)] max-w-none -translate-x-1/2 object-contain"
+                            className="absolute top-[96.53px] left-1/2 h-auto w-[336.18px] max-w-none -translate-x-1/2 object-contain min-[1200px]:w-[calc(100%-218.82px)]"
                             style={{
                                 objectPosition: feature.image.position ?? "center",
                             }}
