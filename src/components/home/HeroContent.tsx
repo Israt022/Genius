@@ -6,9 +6,10 @@ export default function HeroContent() {
     return (
         <div className="flex w-full min-w-0 flex-col items-start min-[1440px]:w-0 min-[1440px]:flex-1">
             <Reveal className="w-full min-w-0">
-                <h1 className="w-full font-sans text-[32px] font-medium leading-[1.15] text-foreground sm:text-5xl md:text-[52px] lg:text-[72px] lg:leading-[1]">
-                    <span className="block leading-[1.15]">{heroData.heading.first}</span>
-                    <span className="block leading-[1.15]">{heroData.heading.second}</span>
+                <h1 className="w-full font-sans text-[32px] font-medium text-foreground sm:text-5xl md:text-[52px] lg:text-[72px] lg:leading-[1]">
+                    <span className="block leading-[1.2]">{heroData.heading.first}</span>
+                    <span className="block leading-[1.2]">{heroData.heading.second}</span>
+                    <span className="block leading-[1.2]">{heroData.heading.third}</span>
                 </h1>
             </Reveal>
 
@@ -26,8 +27,8 @@ export default function HeroContent() {
                             href={button.href}
                             className={
                                 button.variant === "primary"
-                                    ? "inline-flex min-h-12 items-center justify-center rounded-lg bg-brand px-6 py-3 font-semibold text-background transition-transform duration-200 hover:scale-[1.03]"
-                                    : "inline-flex min-h-12 items-center justify-center rounded-lg border border-border bg-white px-6 py-3 font-semibold text-[#041117] transition-transform duration-200 hover:scale-[1.03]"
+                                    ? "inline-flex min-h-12 items-center justify-center rounded-lg bg-brand px-[20px] py-[10px] text-[18px] md:text-[22px] text-background transition-transform duration-200 hover:scale-[1.03]"
+                                    : "inline-flex min-h-12 items-center justify-center rounded-lg border border-border bg-white px-[20px] py-[10px] text-[18px] md:text-[22px] text-[#041117] transition-transform duration-200 hover:scale-[1.03]"
                             }
                         >
                             {button.label}

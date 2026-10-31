@@ -39,7 +39,7 @@ export default function Navbar() {
                                     <Link
                                         href={item.href}
                                         aria-current={active ? "page" : undefined}
-                                        className={`whitespace-nowrap text-sm font-medium transition-colors duration-200 ${active
+                                        className={`whitespace-nowrap text-[18px] md:text-[22px] font-medium transition-colors duration-200 ${active
                                             ? "text-brand"
                                             : "text-foreground/70 hover:text-brand"
                                             }`}
@@ -55,7 +55,7 @@ export default function Navbar() {
                 {/* Right Actions */}
                 <div className="flex shrink-0 items-center gap-3">
                     <Button
-                        className="hidden  rounded-md bg-brand font-semibold text-background transition-opacity hover:opacity-85 lg:inline-flex"
+                        className="hidden rounded-md bg-brand px-[20px] py-[10px] text-[18px] md:text-[22px] font-semibold text-background transition-opacity hover:opacity-85 lg:inline-flex"
                         onPress={() => {
                             window.location.href = cta.href;
                         }}
