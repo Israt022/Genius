@@ -128,7 +128,7 @@ const Reviews = () => {
             </div> */}
             {/* Review Slider */}
             <div
-                className="mx-auto mt-10 w-full max-w-[1140px] overflow-hidden pb-[100px]"
+                className="mx-auto mt-10 w-full max-w-[1140px] overflow-hidden px-[4px] pt-[8px]  pb-[100px]"
                 style={{
                     maskImage:
                         "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
